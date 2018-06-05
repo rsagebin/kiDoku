@@ -57,11 +57,19 @@
 				3A15ECFD20C70A56000E470D /* AppDelegate.swift */,
 				3A15ECFF20C70A56000E470D /* ViewController.swift */,
 				3A15ED0120C70A56000E470D /* Main.storyboard */,
+				3A15ED0F20C70AB5000E470D /* Resources */,
+			);
+			path = kiDoku;
+			sourceTree = "<group>";
+		};
+		3A15ED0F20C70AB5000E470D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				3A15ED0420C70A56000E470D /* Assets.xcassets */,
 				3A15ED0620C70A56000E470D /* LaunchScreen.storyboard */,
 				3A15ED0920C70A56000E470D /* Info.plist */,
 			);
-			path = kiDoku;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +290,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L4BVN9TPVT;
-				INFOPLIST_FILE = kiDoku/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/kiDoku/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +309,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L4BVN9TPVT;
-				INFOPLIST_FILE = kiDoku/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/kiDoku/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

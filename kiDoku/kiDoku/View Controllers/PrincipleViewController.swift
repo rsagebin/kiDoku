@@ -9,19 +9,48 @@
 import UIKit
 
 class PrincipleViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    
+    @IBOutlet var cells: [Button]!
+    var diffLvl = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        for cell in cells {
+            cell.roundCornersAndDropShadow(cornerRadius: 12, shadowColor: UIColor.black.cgColor,
+                                           shadowOpacity: 0.7, shadowOffset: .zero, shadowRadius: 5)
+        }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Actions
+    @IBAction func cellPressed(_ sender: UIButton) {
+        if let val = sender.titleLabel!.text?.integerValue! {
+            if val < 6 {
+                sender.setTitle("\(val+1)", for: .normal)
+            } else {
+                sender.setTitle("1", for: .normal)
+            }
+        }
     }
-    */
+    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+}
 
+
+// MARK: - Extension
+private extension String {
+    struct Formatter {
+        static let instance = NumberFormatter()
+    }
+    
+    var doubleValue: Double? {
+        return Formatter.instance.number(from: self)?.doubleValue
+    }
+    
+    var integerValue: Int? {
+        return Formatter.instance.number(from: self)?.intValue
+    }
 }
